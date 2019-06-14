@@ -98,44 +98,45 @@ const parsePost = postFromGraphql => {
 
 const edgeToArray = data => data.edges.map(edge => edge.node);
 
-const Writing = () => (
-  <StaticQuery
-    query={graphql`
-      query MediumPostQuery {
-        site {
-          siteMetadata {
-            isMediumUserDefined
+const Contact = () => (
+  <Section.Container id="contact" Background={Background}>
+    <Section.Header name="Contact" icon="✍️" label="contact" />
+
+    {/* <StaticQuery
+      query={graphql`
+        query MediumPostQuery {
+          site {
+            siteMetadata {
+              isMediumUserDefined
+            }
           }
-        }
-        allMediumPost(limit: 6, sort: { fields: createdAt, order: DESC }) {
-          edges {
-            node {
-              id
-              uniqueSlug
-              title
-              createdAt(formatString: "MMM YYYY")
-              virtuals {
-                subtitle
-                readingTime
-                previewImage {
-                  imageId
+          allMediumPost(limit: 6, sort: { fields: createdAt, order: DESC }) {
+            edges {
+              node {
+                id
+                uniqueSlug
+                title
+                createdAt(formatString: "MMM YYYY")
+                virtuals {
+                  subtitle
+                  readingTime
+                  previewImage {
+                    imageId
+                  }
                 }
-              }
-              author {
-                username
+                author {
+                  username
+                }
               }
             }
           }
         }
-      }
-    `}
-    render={({ allMediumPost, site }) => {
-      const posts = edgeToArray(allMediumPost).map(parsePost);
-      const { isMediumUserDefined } = site.siteMetadata;
-      return (
-        isMediumUserDefined && (
-          <Section.Container id="writing" Background={Background}>
-            <Section.Header name="Writing" icon="✍️" label="writing" />
+      `}
+      render={({ allMediumPost, site }) => {
+        const posts = edgeToArray(allMediumPost).map(parsePost);
+        const { isMediumUserDefined } = site.siteMetadata;
+        return (
+          isMediumUserDefined && (
             <CardContainer minWidth="300px">
               {posts.map(p => (
                 <Fade bottom>
@@ -143,11 +144,11 @@ const Writing = () => (
                 </Fade>
               ))}
             </CardContainer>
-          </Section.Container>
-        )
-      );
-    }}
-  />
+          )
+        );
+      }}
+    /> */}
+  </Section.Container>
 );
 
-export default Writing;
+export default Contact;
