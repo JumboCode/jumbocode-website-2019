@@ -14,6 +14,7 @@ import WCFBLogo from '../images/WCFB-logo.png';
 import E4PLogo from '../images/E4P-logo.png';
 import HSHSLogo from '../images/HSHS-logo.png';
 import CORESLogo from '../images/CORES-logo.png';
+import BISPOTLogo from '../images/BISPOT-logo.png';
 
 const Background = () => (
   <div>
@@ -233,6 +234,20 @@ const ProjectList = [
     logo: {
       image: {
         src: CORESLogo,
+      },
+    },
+  },
+  {
+    name: 'Bi-Spot',
+    description:
+      'Web application that displays a comprehensive map view of Bi+ organizations and events based on geographical locations, along with contact/sign-up guides',
+    repositoryUrl: 'https://github.com/JumboCode/BRC',
+    projectUrl: 'https://jumbocode-bi-spot.herokuapp.com',
+    type: 'Website',
+    publishedDate: 2019,
+    logo: {
+      image: {
+        src: BISPOTLogo,
       },
     },
   },
