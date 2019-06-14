@@ -41,7 +41,11 @@ const Background = () => (
 
 const LandingPage = () => {
   const socialLinks = [];
-  const roles = ['foo', 'bar'];
+  const roles = [
+    'Empowering Students',
+    'Supporting Local Non-Profits',
+    'Building Custom Technology',
+  ];
   return (
     <Section.Container id="home" Background={Background}>
       <Fragment>
@@ -59,9 +63,9 @@ const LandingPage = () => {
           mb={[3, 5]}
           textAlign="center"
         >
-          <TextLoop>
+          <TextLoop mask noWrap={false}>
             {roles.map(text => (
-              <Text width={[300, 500]} key={text}>
+              <Text width={[300, 800]} key={text}>
                 {text}
               </Text>
             ))}
