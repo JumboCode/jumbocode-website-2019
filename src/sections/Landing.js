@@ -40,20 +40,16 @@ const Background = () => (
 );
 
 const LandingPage = () => {
-  const name = 'jacob';
   const socialLinks = [];
   const roles = ['foo', 'bar'];
   return (
     <Section.Container id="home" Background={Background}>
       <Fragment>
-        <Heading
-          textAlign="center"
-          as="h1"
-          color="primary"
-          fontSize={[5, 6, 8]}
-          mb={[3, 4, 5]}
-        >
-          {`Hello, I'm ${name}!`}
+        <Heading as="h1" fontSize={[5, 6, 8]} mb={[3, 4, 5]} alignSelf="center">
+          <Flex>
+            <Text color="secondary">Jumbo</Text>
+            <Text color="primary">Code</Text>
+          </Flex>
         </Heading>
 
         <Heading
