@@ -9,4 +9,8 @@ module.exports = {
   secondary: '#a6d9f7',
   secondaryLight: '#b6dff8',
   secondaryDark: '#88b2cb',
+
+  tertiary: '#2D2D2D',
+  tertiaryLight: '#535353',
+  tertiaryLigher: '#797979',
 };

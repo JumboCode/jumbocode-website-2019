@@ -20,6 +20,7 @@ body {
   margin: 0;
   font-family: Cabin;
   overflow-x: hidden;
+  // background-color: #797979;
 }
 `;
 
