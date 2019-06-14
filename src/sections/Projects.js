@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Image, Text, Flex, Box } from 'rebass';
-import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
@@ -13,6 +12,7 @@ import Hide from '../components/Hide';
 
 import WCFBLogo from '../images/WCFB-logo.png';
 import E4PLogo from '../images/E4P-logo.png';
+import HSHSLogo from '../images/HSHS-logo.png';
 
 const Background = () => (
   <div>
@@ -83,7 +83,7 @@ const ImageContainer = styled.div`
 const ProjectImage = styled(Image)`
   width: ${CARD_HEIGHT};
   height: ${CARD_HEIGHT};
-  padding: 40px;
+  padding: 45px;
   margin-top: 0px;
 
   ${MEDIA_QUERY_SMALL} {
@@ -196,7 +196,8 @@ const ProjectList = [
   },
   {
     name: 'Ears 4 Peers',
-    description: 'Anonymous chat service for emergency hotline',
+    description:
+      'Anonymous & secure chat service for student volunteer hotline',
     repositoryUrl: 'https://github.com/JumboCode/E4P',
     projectUrl: 'https://ears4peers.herokuapp.com/',
     type: 'Website',
@@ -204,6 +205,19 @@ const ProjectList = [
     logo: {
       image: {
         src: E4PLogo,
+      },
+    },
+  },
+  {
+    name: 'Harvard Square Homeless Shelter',
+    description:
+      'Mobile application to facilitate inventory and resource management for street teams at homeless shelter',
+    repositoryUrl: 'https://github.com/JumboCode/HSHS-2018-2019',
+    type: 'Mobile Application',
+    publishedDate: '2018, 2019',
+    logo: {
+      image: {
+        src: HSHSLogo,
       },
     },
   },
