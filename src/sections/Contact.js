@@ -100,7 +100,7 @@ const edgeToArray = data => data.edges.map(edge => edge.node);
 
 const Contact = () => (
   <Section.Container id="contact" Background={Background}>
-    <Section.Header name="Contact" icon="✍️" label="contact" />
+    <Section.Header name="Contact" icon="📬" label="contact" />
 
     {/* <StaticQuery
       query={graphql`
