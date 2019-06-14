@@ -13,6 +13,7 @@ import Hide from '../components/Hide';
 import WCFBLogo from '../images/WCFB-logo.png';
 import E4PLogo from '../images/E4P-logo.png';
 import HSHSLogo from '../images/HSHS-logo.png';
+import CORESLogo from '../images/CORES-logo.png';
 
 const Background = () => (
   <div>
@@ -218,6 +219,20 @@ const ProjectList = [
     logo: {
       image: {
         src: HSHSLogo,
+      },
+    },
+  },
+  {
+    name: 'Teach in Cores',
+    description:
+      'Multilingual website for English classes through the Comittee on Refugees from El Salvador in Somerville',
+    repositoryUrl: 'https://github.com/JumboCode/CORES',
+    projectUrl: 'http://teachincores.com/',
+    type: 'Website',
+    publishedDate: 2019,
+    logo: {
+      image: {
+        src: CORESLogo,
       },
     },
   },
