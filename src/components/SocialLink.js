@@ -1,9 +1,10 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
 import { Link } from 'rebass';
 import { Tooltip } from 'react-tippy';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { FaGithub } from 'react-icons/fa';
+import { MdOpenInBrowser } from 'react-icons/md';
 
 const IconLink = styled(Link)`
   transition: color 0.5s;
@@ -14,18 +15,24 @@ const IconLink = styled(Link)`
   }
 `;
 
-const SocialLink = ({ fontAwesomeIcon, name, url }) => (
+const SocialLink = icon => ({ name, url }) => (
   <Tooltip title={name} position="bottom" trigger="mouseenter">
     <IconLink href={url} target="_blank">
-      <FontAwesome name={fontAwesomeIcon} />
+      {icon}
     </IconLink>
   </Tooltip>
 );
 
-SocialLink.propTypes = {
+const SocialLinkPropTypes = {
   fontAwesomeIcon: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
 };
 
-export default SocialLink;
+const WebsiteLink = SocialLink(<MdOpenInBrowser />);
+WebsiteLink.propTypes = SocialLinkPropTypes;
+
+const RepoLink = SocialLink(<FaGithub />);
+RepoLink.propTypes = SocialLinkPropTypes;
+
+export { WebsiteLink, RepoLink };

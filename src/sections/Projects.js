@@ -6,10 +6,13 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
-import SocialLink from '../components/SocialLink';
+import { RepoLink, WebsiteLink } from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import Hide from '../components/Hide';
+
+import WCFBLogo from '../images/WCFB-logo.png';
+import E4PLogo from '../images/E4P-logo.png';
 
 const Background = () => (
   <div>
@@ -133,20 +136,16 @@ const Project = ({
               float: 'right',
             }}
           >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
+            {repositoryUrl && (
+              <Box mx={1} fontSize={5}>
+                <RepoLink name="Check repository" url={repositoryUrl} />
+              </Box>
+            )}
+            {projectUrl && (
+              <Box mx={1} fontSize={5}>
+                <WebsiteLink name="See project" url={projectUrl} />
+              </Box>
+            )}
           </Flex>
           <ImageSubtitle
             bg="primaryLight"
@@ -169,8 +168,8 @@ const Project = ({
 Project.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
+  projectUrl: PropTypes.string,
+  repositoryUrl: PropTypes.string,
   type: PropTypes.string.isRequired,
   publishedDate: PropTypes.string.isRequired,
   logo: PropTypes.shape({
@@ -180,42 +179,51 @@ Project.propTypes = {
   }).isRequired,
 };
 
-const Projects = () => (
-  <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" icon="💻" Box="notebook" />
-    {/* <StaticQuery
-      query={graphql`
-        query ProjectsQuery {
-          contentfulAbout {
-            projects {
-              id
-              name
-              description
-              projectUrl
-              repositoryUrl
-              publishedDate(formatString: "YYYY")
-              type
-              logo {
-                title
-                image: resize(width: 200, quality: 100) {
-                  src
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={({ contentfulAbout }) => (
-        <CardContainer minWidth="350px">
-          {contentfulAbout.projects.map((p, i) => (
-            <Fade bottom delay={i * 200}>
-              <Project key={p.id} {...p} />
-            </Fade>
-          ))}
-        </CardContainer>
-      )}
-    /> */}
-  </Section.Container>
-);
+const ProjectList = [
+  {
+    name: 'WCFB',
+    description:
+      'Volunteer sign-in application for the Wooster County Food Bank',
+    repositoryUrl: 'https://github.com/JumboCode/WCFB',
+    projectUrl: 'http://wcfb-signin.herokuapp.com/',
+    type: 'Desktop Application',
+    publishedDate: 2019,
+    logo: {
+      image: {
+        src: WCFBLogo,
+      },
+    },
+  },
+  {
+    name: 'Ears 4 Peers',
+    description: 'Anonymous chat service for emergency hotline',
+    repositoryUrl: 'https://github.com/JumboCode/E4P',
+    projectUrl: 'https://ears4peers.herokuapp.com/',
+    type: 'Website',
+    publishedDate: 2019,
+    logo: {
+      image: {
+        src: E4PLogo,
+      },
+    },
+  },
+];
+
+const Projects = () => {
+  return (
+    <Section.Container id="projects" Background={Background}>
+      <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+        <Section.Header name="Projects" icon="💻" Box="notebook" />
+      </Flex>
+      <CardContainer minWidth="350px">
+        {ProjectList.map((p, i) => (
+          <Fade bottom delay={i * 200}>
+            <Project key={p.id} {...p} />
+          </Fade>
+        ))}
+      </CardContainer>
+    </Section.Container>
+  );
+};
 
 export default Projects;
