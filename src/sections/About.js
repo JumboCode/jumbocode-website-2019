@@ -44,24 +44,15 @@ const ProfilePicture = styled(Image)`
 
 export default () => (
   <Section.Container id="about" Background={Background}>
-    <Section.Header name="About Us" icon="🐘" label="elephant" />
+    <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+      <Section.Header name="About Us" icon="🐘" label="elephant" />
+    </Flex>
     <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
       <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
         <Fade bottom>
           <ReactMarkdown
             source={AboutContentPath}
             renderers={markdownRenderer}
-          />
-        </Fade>
-      </Box>
-
-      <Box width={[1, 1, 2 / 6]} style={{ maxWidth: '300px', margin: 'auto' }}>
-        <Fade right>
-          <ProfilePicture
-            src="http://asiasociety.org/files/uploads/510images/anthonymonaco.jpg"
-            alt="jumbo jumbo"
-            mt={[4, 4, 0]}
-            ml={[0, 0, 1]}
           />
         </Fade>
       </Box>
