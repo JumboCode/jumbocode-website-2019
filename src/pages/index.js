@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Layout from '../components/Layout';
 import Landing from '../sections/Landing';
 import About from '../sections/About';
@@ -9,6 +10,18 @@ import Footer from '../components/Footer';
 
 const IndexPage = () => (
   <Layout>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <link
+        href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Helvetica+Neue"
+        rel="stylesheet"
+      />
+      <title>JumboCode</title>
+    </Helmet>
     <Header />
     <Landing />
     <About />
