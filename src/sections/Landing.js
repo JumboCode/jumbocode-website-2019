@@ -1,11 +1,9 @@
 import React, { Fragment } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import { Heading, Flex, Box, Text } from 'rebass';
+import { Heading, Flex, Text } from 'rebass';
 import TextLoop from 'react-text-loop';
 import { SectionLink } from 'react-scroll-section';
 import Section from '../components/Section';
-import SocialLink from '../components/SocialLink';
-import MouseIcon from '../components/MouseIcon';
+import BouncyArrow from '../components/BouncyArrow';
 import Triangle from '../components/Triangle';
 
 const Background = () => (
@@ -40,7 +38,6 @@ const Background = () => (
 );
 
 const LandingPage = () => {
-  const socialLinks = [];
   const roles = [
     'Empowering Students',
     'Supporting Local Non-Profits',
@@ -71,16 +68,8 @@ const LandingPage = () => {
             ))}
           </TextLoop>
         </Heading>
-
-        <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-          {socialLinks.map(({ id, ...rest }) => (
-            <Box mx={3} fontSize={[5, 6, 6]} key={id}>
-              <SocialLink {...rest} />
-            </Box>
-          ))}
-        </Flex>
         <SectionLink section="about">
-          {({ onClick }) => <MouseIcon onClick={onClick} />}
+          {({ onClick }) => <BouncyArrow onClick={onClick} />}
         </SectionLink>
       </Fragment>
     </Section.Container>

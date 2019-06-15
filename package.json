@@ -51,6 +51,7 @@
     "prop-types": "^15.6.2",
     "raw-loader": "^3.0.0",
     "react": "^16.7.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.7.0",
     "react-fontawesome": "^1.6.1",
     "react-headroom": "^2.2.4",
