@@ -40,7 +40,9 @@ const Background = () => (
 const LandingPage = () => {
   const roles = [
     'Empowering Students',
-    'Supporting Local Non-Profits',
+    'Supporting Non-Profits',
+    'Volunteering Localy',
+    'Impacting Globaly',
     'Building Custom Technology',
   ];
   return (

@@ -18,9 +18,17 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; 
   margin: 0;
-  font-family: Cabin;
+  font-family: Helvetica Neue;
   overflow-x: hidden;
   // background-color: #797979;
+}
+
+h1 {
+  font-family: Helvetica Neue;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: Roboto Mono;
 }
 `;
 
