@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Heading, Flex, Text } from 'rebass';
 import TextLoop from 'react-text-loop';
 import { SectionLink } from 'react-scroll-section';
+import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
 import BouncyArrow from '../components/BouncyArrow';
 import Triangle from '../components/Triangle';
@@ -50,10 +51,14 @@ const LandingPage = () => {
       <Fragment>
         <Heading as="h1" fontSize={['10vw']} mb={[3, 4, 5]} alignSelf="center">
           <Flex>
-            <Text fontWeight="900" color="secondary">
-              Jumbo
-            </Text>
-            <Text color="primary">Code</Text>
+            <Fade>
+              <Text fontWeight="900" color="secondary">
+                Jumbo
+              </Text>
+            </Fade>
+            <Fade delay={500}>
+              <Text color="primary">Code</Text>
+            </Fade>
           </Flex>
         </Heading>
 
@@ -64,13 +69,15 @@ const LandingPage = () => {
           mb={[3, 5]}
           textAlign="center"
         >
-          <TextLoop mask noWrap={false}>
-            {roles.map(text => (
-              <Text width={[300, 800]} key={text}>
-                {text}
-              </Text>
-            ))}
-          </TextLoop>
+          <Fade delay={1000}>
+            <TextLoop mask noWrap={false}>
+              {roles.map(text => (
+                <Text width={[300, 800]} key={text}>
+                  {text}
+                </Text>
+              ))}
+            </TextLoop>
+          </Fade>
         </Heading>
         <SectionLink section="about">
           {({ onClick }) => <BouncyArrow onClick={onClick} />}
