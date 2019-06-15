@@ -3,7 +3,7 @@ import { Link } from 'rebass';
 import { Tooltip } from 'react-tippy';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { MdOpenInBrowser } from 'react-icons/md';
 
 const IconLink = styled(Link)`
@@ -35,4 +35,10 @@ WebsiteLink.propTypes = SocialLinkPropTypes;
 const RepoLink = SocialLink(<FaGithub />);
 RepoLink.propTypes = SocialLinkPropTypes;
 
-export { WebsiteLink, RepoLink };
+const MailLink = SocialLink(<FaEnvelope />);
+MailLink.propTypes = SocialLinkPropTypes;
+
+const InstagramLink = SocialLink(<FaInstagram />);
+InstagramLink.propTypes = SocialLinkPropTypes;
+
+export { WebsiteLink, RepoLink, MailLink, InstagramLink };

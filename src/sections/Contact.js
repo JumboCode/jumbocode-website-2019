@@ -1,13 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Heading, Text } from 'rebass';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import { Box, Text, Flex, Heading } from 'rebass';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
-import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
-import ImageSubtitle from '../components/ImageSubtitle';
+import { RepoLink, MailLink, InstagramLink } from '../components/SocialLink';
 
 const Background = () => (
   <div>
@@ -35,119 +31,48 @@ const Background = () => (
   </div>
 );
 
-const CoverImage = styled.img`
-  width: 100%;
-  object-fit: cover;
-`;
-
-const EllipsisHeading = styled(Heading)`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-inline-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  border-bottom: ${props => props.theme.colors.primary} 5px solid;
-`;
-
-const Post = ({ title, text, image, url, date, time }) => (
-  <Card onClick={() => window.open(url, '_blank')} pb={4}>
-    <EllipsisHeading m={3} p={1}>
-      {title}
-    </EllipsisHeading>
-    {image && <CoverImage src={image} height="200px" alt={title} />}
-    <Text m={3}>{text}</Text>
-    <ImageSubtitle bg="primaryLight" color="white" x="right" y="bottom" round>
-      {`${date} - ${Math.ceil(time)} min`}
-    </ImageSubtitle>
-  </Card>
-);
-
-Post.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  time: PropTypes.number.isRequired,
-};
-
-const parsePost = postFromGraphql => {
-  const MEDIUM_CDN = 'https://cdn-images-1.medium.com/max/400';
-  const MEDIUM_URL = 'https://medium.com';
-  const {
-    id,
-    uniqueSlug,
-    createdAt,
-    title,
-    virtuals,
-    author,
-  } = postFromGraphql;
-  const image =
-    virtuals.previewImage.imageId &&
-    `${MEDIUM_CDN}/${virtuals.previewImage.imageId}`;
-  return {
-    id,
-    title,
-    time: virtuals.readingTime,
-    date: createdAt,
-    text: virtuals.subtitle,
-    image,
-    url: `${MEDIUM_URL}/${author.username}/${uniqueSlug}`,
-  };
-};
-
-const edgeToArray = data => data.edges.map(edge => edge.node);
-
 const Contact = () => (
   <Section.Container id="contact" Background={Background}>
-    <Section.Header name="Contact" icon="📬" label="contact" />
-
-    {/* <StaticQuery
-      query={graphql`
-        query MediumPostQuery {
-          site {
-            siteMetadata {
-              isMediumUserDefined
-            }
-          }
-          allMediumPost(limit: 6, sort: { fields: createdAt, order: DESC }) {
-            edges {
-              node {
-                id
-                uniqueSlug
-                title
-                createdAt(formatString: "MMM YYYY")
-                virtuals {
-                  subtitle
-                  readingTime
-                  previewImage {
-                    imageId
-                  }
-                }
-                author {
-                  username
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={({ allMediumPost, site }) => {
-        const posts = edgeToArray(allMediumPost).map(parsePost);
-        const { isMediumUserDefined } = site.siteMetadata;
-        return (
-          isMediumUserDefined && (
-            <CardContainer minWidth="300px">
-              {posts.map(p => (
-                <Fade bottom>
-                  <Post key={p.id} {...p} />
-                </Fade>
-              ))}
-            </CardContainer>
-          )
-        );
-      }}
-    /> */}
+    <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+      <Section.Header name="Contact" icon="📬" label="contact" />
+    </Flex>
+    <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+      <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
+        <Fade bottom>
+          <Heading
+            as="h3"
+            color="primary"
+            fontSize={[3, 4, 5]}
+            mb={[3, 5]}
+            textAlign="center"
+          >
+            Want to learn more about how JumboCode can help your organization?
+          </Heading>
+          <Text fontSize={[2, 3, 4]} textAlign="center">
+            Shoot us an email at TuftsJumboCode@gmail.com
+          </Text>
+        </Fade>
+      </Box>
+    </Flex>
+    <Flex
+      alignItems="center"
+      justifyContent="center"
+      flexWrap="wrap"
+      style={{ marginTop: 20 }}
+    >
+      <Box mx={1} fontSize={7}>
+        <RepoLink name="Github" url="https://github.com/JumboCode" />
+      </Box>
+      <Box mx={1} fontSize={7}>
+        <MailLink name="Email Us" url="mailto:tuftsjumbocode@gmail.com" />
+      </Box>
+      <Box mx={1} fontSize={7}>
+        <InstagramLink
+          name="Instagram"
+          url="https://instagram.com/jumbocode?igshid=109ivsuzgxdu2"
+        />
+      </Box>
+    </Flex>
   </Section.Container>
 );
 
