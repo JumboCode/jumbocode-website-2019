@@ -24,7 +24,7 @@ body {
 }
 
 h1 {
-  font-family: Helvetica Neue;
+  font-family: sans-serif;
 }
 
 h2, h3, h4, h5, h6 {

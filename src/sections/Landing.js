@@ -48,9 +48,11 @@ const LandingPage = () => {
   return (
     <Section.Container id="home" Background={Background}>
       <Fragment>
-        <Heading as="h1" fontSize={[5, 6, 8]} mb={[3, 4, 5]} alignSelf="center">
+        <Heading as="h1" fontSize={['10vw']} mb={[3, 4, 5]} alignSelf="center">
           <Flex>
-            <Text color="secondary">Jumbo</Text>
+            <Text fontWeight="900" color="secondary">
+              Jumbo
+            </Text>
             <Text color="primary">Code</Text>
           </Flex>
         </Heading>

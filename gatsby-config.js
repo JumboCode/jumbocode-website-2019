@@ -11,7 +11,12 @@ const plugins = [
   {
     resolve: 'gatsby-plugin-google-fonts',
     options: {
-      fonts: ['Roboto Mono', 'Helvetica Neue Regular', 'Helvetica Neue'],
+      fonts: [
+        'Roboto Mono',
+        'Helvetica Neue Regular',
+        'Helvetica Neue',
+        'Helvetica Neue Bold',
+      ],
     },
   },
   'gatsby-transformer-remark',
