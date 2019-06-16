@@ -15,30 +15,28 @@ const IconLink = styled(Link)`
   }
 `;
 
-const SocialLink = icon => ({ name, url }) => (
-  <Tooltip title={name} position="bottom" trigger="mouseenter">
-    <IconLink href={url} target="_blank">
-      {icon}
-    </IconLink>
-  </Tooltip>
-);
+const SocialLink = icon => {
+  const Wrapped = ({ name, url }) => (
+    <Tooltip title={name} position="bottom" trigger="mouseenter">
+      <IconLink href={url} target="_blank">
+        {icon}
+      </IconLink>
+    </Tooltip>
+  );
+  Wrapped.propTypes = {
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  };
+  return Wrapped;
+};
 
-const SocialLinkPropTypes = {
-  fontAwesomeIcon: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+SocialLink.propTypes = {
+  icon: PropTypes.element,
 };
 
 const WebsiteLink = SocialLink(<MdOpenInBrowser />);
-WebsiteLink.propTypes = SocialLinkPropTypes;
-
 const RepoLink = SocialLink(<FaGithub />);
-RepoLink.propTypes = SocialLinkPropTypes;
-
 const MailLink = SocialLink(<FaEnvelope />);
-MailLink.propTypes = SocialLinkPropTypes;
-
 const InstagramLink = SocialLink(<FaInstagram />);
-InstagramLink.propTypes = SocialLinkPropTypes;
 
 export { WebsiteLink, RepoLink, MailLink, InstagramLink };
