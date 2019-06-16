@@ -2,6 +2,9 @@ import React from 'react';
 import { Box, Flex } from 'rebass';
 import ReactMarkdown from 'react-markdown';
 import Fade from 'react-reveal/Fade';
+
+// TODO: Correctly install webpack to use raw-loader for markdown files
+// eslint-disable-next-line import/no-webpack-loader-syntax,  import/no-unresolved
 import AboutContentPath from 'raw-loader!../content/about.md';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
