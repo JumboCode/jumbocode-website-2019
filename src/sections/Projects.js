@@ -19,16 +19,9 @@ import BISPOTLogo from '../images/BISPOT-logo.png';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryLight"
-      height={['80vh', '80vh']}
+      color="backgroundDark"
+      height={['25vh', '20vh']}
       width={['100vw', '100vw']}
-      invertX
-    />
-
-    <Triangle
-      color="background"
-      height={['50vh', '20vh']}
-      width={['50vw', '50vw']}
       invertX
     />
 
