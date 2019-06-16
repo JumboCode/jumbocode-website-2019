@@ -6,7 +6,7 @@ import About from '../sections/About';
 import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 
 const IndexPage = () => (
   <Layout>

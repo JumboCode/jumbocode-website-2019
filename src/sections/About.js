@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { Box, Image, Flex } from 'rebass';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import React from 'react';
+import { Box, Flex } from 'rebass';
 import ReactMarkdown from 'react-markdown';
 import Fade from 'react-reveal/Fade';
 import AboutContentPath from 'raw-loader!../content/about.md';
@@ -32,15 +30,6 @@ const Background = () => (
     />
   </div>
 );
-
-const ProfilePicture = styled(Image)`
-  border-radius: 50%;
-  transition: all 0.25s ease-out;
-
-  &:hover {
-    border-radius: 20%;
-  }
-`;
 
 export default () => (
   <Section.Container id="about" Background={Background}>
