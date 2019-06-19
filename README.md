@@ -9,6 +9,13 @@
 
 ### [Demo Website](https://jumbocode.netlify.com/)
 
-## License 📝
+## Development
+
+1. ```yarn install`
+2. `gatsby develop`
+
+& Have fun.
+
+## License
 
 MIT.
