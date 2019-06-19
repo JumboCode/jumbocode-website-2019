@@ -42,7 +42,7 @@ const LandingPage = () => {
   const roles = [
     'Empowering Students',
     'Supporting Non-Profits',
-    'Volunteering Localy',
+    'Volunteering Locally',
     'Impacting Globaly',
     'Building Custom Technology',
   ];
