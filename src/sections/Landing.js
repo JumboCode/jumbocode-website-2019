@@ -73,7 +73,7 @@ const LandingPage = () => {
           mb={[3, 5]}
           textAlign="center"
         >
-          <Fade delay={1000}>
+          <Fade delay={1000} style={centerHorizontally}>
             <TextLoop mask noWrap={false}>
               {roles.map(text => (
                 <Text width={[300, 800]} key={text}>
