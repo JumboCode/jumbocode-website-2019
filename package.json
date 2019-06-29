@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-mate",
-  "version": "2.2.0",
-  "description": "Gatsby v2 starter to create a top notch portfolio!",
+  "name": "jumbocode-website",
+  "version": "1.1.0",
+  "description": "JumboCode website 2019",
   "main": "index.js",
   "scripts": {
     "build": "cleandir ./.cache && gatsby build",
@@ -12,19 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EmaSuriano/gatsby-starter-mate.git"
+    "url": "git+https://github.com/JumboCode/jumbocode-website-overhaul"
   },
   "keywords": [
     "gatsby",
-    "starter",
-    "contentful",
-    "PWA",
-    "portfolio"
+    "jumbocode"
   ],
-  "author": "Ema Suriano",
+  "author": "Jacob Jaffe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EmaSuriano/gatsby-starter-mate/issues"
+    "url": "https://github.com/JumboCode/jumbocode-website-overhaul/issues"
   },
   "homepage": "https://github.com/EmaSuriano/gatsby-starter-mate#readme",
   "dependencies": {
