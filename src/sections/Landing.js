@@ -53,8 +53,14 @@ const LandingPage = () => {
   return (
     <Section.Container id="home" Background={Background}>
       <Fragment>
-        <Heading as="h1" fontSize={['10vw']} mb={[3, 4, 5]} alignSelf="center">
-          <Flex style={centerHorizontally}>
+        <Heading
+          as="h1"
+          fontSize={['10vw']}
+          mb={[3, 4, 5]}
+          alignSelf="center"
+          style={centerHorizontally}
+        >
+          <Flex>
             <Fade>
               <Text fontWeight="900" color="secondary">
                 Jumbo
@@ -72,8 +78,9 @@ const LandingPage = () => {
           fontSize={[4, 5, 6]}
           mb={[3, 5]}
           textAlign="center"
+          style={centerHorizontally}
         >
-          <Fade delay={1000} style={centerHorizontally}>
+          <Fade delay={1000}>
             <TextLoop mask noWrap={false}>
               {roles.map(text => (
                 <Text width={[300, 800]} key={text}>
