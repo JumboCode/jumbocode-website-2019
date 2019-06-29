@@ -11,20 +11,20 @@ const Background = () => (
   <div>
     <Triangle
       color="backgroundDark"
-      height={['35vh', '80vh']}
+      height={['25vh', '80vh']}
       width={['95vw', '60vw']}
     />
 
     <Triangle
       color="secondary"
-      height={['38vh', '80vh']}
-      width={['50vw', '35vw']}
+      height={['30vh', '80vh']}
+      width={['50vw', '30vw']}
     />
 
     <Triangle
       color="primaryDark"
-      height={['25vh', '35vh']}
-      width={['75vw', '60vw']}
+      height={['35vh', '35vh']}
+      width={['90vw', '60vw']}
       invertX
     />
 
