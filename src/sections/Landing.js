@@ -38,6 +38,10 @@ const Background = () => (
   </div>
 );
 
+// See: https://github.com/EmaSuriano/gatsby-starter-mate/commit/547849248ff4f9a93be575b31bb3c35c47043ba0
+// https://github.com/EmaSuriano/gatsby-starter-mate/issues/54
+const centerHorizontally = { marginRight: 'auto', marginLeft: 'auto' };
+
 const LandingPage = () => {
   const roles = [
     'Empowering Students',
@@ -50,7 +54,7 @@ const LandingPage = () => {
     <Section.Container id="home" Background={Background}>
       <Fragment>
         <Heading as="h1" fontSize={['10vw']} mb={[3, 4, 5]} alignSelf="center">
-          <Flex>
+          <Flex style={centerHorizontally}>
             <Fade>
               <Text fontWeight="900" color="secondary">
                 Jumbo
