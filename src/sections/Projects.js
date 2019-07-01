@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Image, Text, Flex, Box } from 'rebass';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import makeCarousel from 'react-reveal/makeCarousel';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import { RepoLink, WebsiteLink } from '../components/SocialLink';
@@ -97,6 +98,23 @@ const ProjectTag = styled.div`
   }
 `;
 
+const Container = styled.div`
+  position: relative;
+`;
+
+const Div = styled.div`
+  margin: 40px;
+  border: 5px outset pink;
+  &:hover {
+    background-color: yellow;
+  }
+`;
+
+const CarouselUI = ({ position, total, handleClick, children }) => (
+  <Container>{children}</Container>
+);
+const Carousel = makeCarousel(CarouselUI);
+
 const Project = ({
   name,
   description,
@@ -175,13 +193,23 @@ const Projects = () => {
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Section.Header name="Projects" icon="💻" Box="notebook" />
       </Flex>
-      <CardContainer minWidth="350px">
-        {ProjectList.map((p, i) => (
-          <Fade bottom delay={i * 200}>
-            <Project key={p.id} {...p} />
-          </Fade>
-        ))}
-      </CardContainer>
+      <Carousel>
+        <Fade right>
+          <CardContainer minWidth="350px">
+            {ProjectList.map((p, i) => (
+              <Fade bottom delay={i * 200}>
+                <Project key={p.id} {...p} />
+              </Fade>
+            ))}
+          </CardContainer>
+        </Fade>
+        <Fade right>
+          <div>
+            <h1>Slide 2</h1>
+            <p>Slide Description</p>
+          </div>
+        </Fade>
+      </Carousel>
     </Section.Container>
   );
 };
