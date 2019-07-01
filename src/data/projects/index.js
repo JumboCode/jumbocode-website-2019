@@ -15,7 +15,7 @@ const ProjectList = [
     repositoryUrl: 'https://github.com/JumboCode/WCFB',
     projectUrl: 'http://wcfb-signin.herokuapp.com/',
     type: 'Desktop Application',
-    publishedDate: 2019,
+    years: [2019],
     logo: {
       image: {
         src: WCFBLogo,
@@ -29,7 +29,7 @@ const ProjectList = [
     repositoryUrl: 'https://github.com/JumboCode/E4P',
     projectUrl: 'https://ears4peers.herokuapp.com/',
     type: 'Website',
-    publishedDate: 2019,
+    years: [2019],
     logo: {
       image: {
         src: E4PLogo,
@@ -42,7 +42,7 @@ const ProjectList = [
       'Mobile application to facilitate inventory and resource management for street teams at homeless shelter',
     repositoryUrl: 'https://github.com/JumboCode/HSHS-2018-2019',
     type: 'Mobile Application',
-    publishedDate: '2018, 2019',
+    years: [2018, 2019],
     logo: {
       image: {
         src: HSHSLogo,
@@ -56,7 +56,7 @@ const ProjectList = [
     repositoryUrl: 'https://github.com/JumboCode/CORES',
     projectUrl: 'http://teachincores.com/',
     type: 'Website',
-    publishedDate: 2019,
+    years: [2019],
     logo: {
       image: {
         src: CORESLogo,
@@ -70,7 +70,7 @@ const ProjectList = [
     repositoryUrl: 'https://github.com/JumboCode/BRC',
     projectUrl: 'https://jumbocode-bi-spot.herokuapp.com',
     type: 'Website',
-    publishedDate: 2019,
+    years: [2019],
     logo: {
       image: {
         src: BISPOTLogo,

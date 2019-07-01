@@ -3,15 +3,21 @@ import PropTypes from 'prop-types';
 import { Image, Text, Flex, Box } from 'rebass';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
-import makeCarousel from 'react-reveal/makeCarousel';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import { RepoLink, WebsiteLink } from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import Hide from '../components/Hide';
+import LinkAnimated from '../components/LinkAnimated';
 
 import ProjectList from '../data/projects';
+
+const ProjectsByYear = {
+  2019: ProjectList.filter(p => p.years.indexOf(2019) !== -1),
+  2018: ProjectList.filter(p => p.years.indexOf(2018) !== -1),
+  2017: ProjectList.filter(p => p.years.indexOf(2017) !== -1),
+};
 
 const Background = () => (
   <div>
@@ -98,30 +104,13 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Container = styled.div`
-  position: relative;
-`;
-
-const Div = styled.div`
-  margin: 40px;
-  border: 5px outset pink;
-  &:hover {
-    background-color: yellow;
-  }
-`;
-
-const CarouselUI = ({ position, total, handleClick, children }) => (
-  <Container>{children}</Container>
-);
-const Carousel = makeCarousel(CarouselUI);
-
 const Project = ({
   name,
   description,
   projectUrl,
   repositoryUrl,
   type,
-  publishedDate,
+  years,
   logo,
 }) => (
   <Card p={0}>
@@ -166,7 +155,9 @@ const Project = ({
             {type}
           </ImageSubtitle>
           <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+            <ImageSubtitle bg="backgroundDark">
+              {years.join(', ')}
+            </ImageSubtitle>
           </Hide>
         </ProjectTag>
       </ImageContainer>
@@ -180,38 +171,83 @@ Project.propTypes = {
   projectUrl: PropTypes.string,
   repositoryUrl: PropTypes.string,
   type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
+  years: PropTypes.arrayOf(PropTypes.number).isRequired,
   logo: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
     }),
   }).isRequired,
 };
-const Projects = () => {
-  return (
-    <Section.Container id="projects" Background={Background}>
-      <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-        <Section.Header name="Projects" icon="💻" Box="notebook" />
-      </Flex>
-      <Carousel>
-        <Fade right>
-          <CardContainer minWidth="350px">
-            {ProjectList.map((p, i) => (
-              <Fade bottom delay={i * 200}>
-                <Project key={p.id} {...p} />
-              </Fade>
-            ))}
-          </CardContainer>
-        </Fade>
-        <Fade right>
-          <div>
-            <h1>Slide 2</h1>
-            <p>Slide Description</p>
-          </div>
-        </Fade>
-      </Carousel>
-    </Section.Container>
-  );
-};
+class Projects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shownYear: 2019,
+    };
+  }
+
+  render() {
+    const { shownYear } = this.state;
+    return (
+      <Section.Container id="projects" Background={Background}>
+        <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+          <Section.Header name="Projects" icon="💻" Box="notebook" />
+        </Flex>
+        <Flex
+          width="350px"
+          alignSelf="center"
+          alignItems="center"
+          justifyContent="space-around"
+        >
+          {[2019, 2018].map(year => {
+            return (
+              <Text as="h4" color="secondaryDark" mb={4}>
+                <LinkAnimated
+                  selected={shownYear === year}
+                  onClick={() => {
+                    // Don't animate if nothing to change.
+                    if (year === shownYear) return;
+                    this.setState({
+                      shownYear: year,
+                    });
+                  }}
+                >
+                  {year}
+                </LinkAnimated>
+              </Text>
+            );
+          })}
+        </Flex>
+
+        <CardContainer minWidth="350px">
+          {ProjectsByYear[2019].map((p, i) => (
+            <Fade
+              bottom
+              collapse
+              opposite
+              when={shownYear === 2019}
+              delay={i * 150}
+            >
+              <Project key={p.id} {...p} />
+            </Fade>
+          ))}
+        </CardContainer>
+        <CardContainer minWidth="350px">
+          {ProjectsByYear[2018].map((p, i) => (
+            <Fade
+              bottom
+              collapse
+              opposite
+              when={shownYear === 2018}
+              delay={i * 150}
+            >
+              <Project key={p.id} {...p} />
+            </Fade>
+          ))}
+        </CardContainer>
+      </Section.Container>
+    );
+  }
+}
 
 export default Projects;
