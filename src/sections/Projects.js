@@ -183,11 +183,12 @@ class Projects extends React.Component {
     super(props);
     this.state = {
       shownYear: 2019,
+      doneAnimating: true,
     };
   }
 
   render() {
-    const { shownYear } = this.state;
+    const { shownYear, doneAnimating } = this.state;
     return (
       <Section.Container id="projects" Background={Background}>
         <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
@@ -207,9 +208,19 @@ class Projects extends React.Component {
                   onClick={() => {
                     // Don't animate if nothing to change.
                     if (year === shownYear) return;
-                    this.setState({
-                      shownYear: year,
-                    });
+                    this.setState(
+                      {
+                        shownYear: year,
+                        doneAnimating: false,
+                      },
+                      () => {
+                        setTimeout(() => {
+                          this.setState({
+                            doneAnimating: true,
+                          });
+                        }, 1000);
+                      },
+                    );
                   }}
                 >
                   {year}
@@ -225,7 +236,7 @@ class Projects extends React.Component {
               bottom
               collapse
               opposite
-              when={shownYear === 2019}
+              when={shownYear === 2019 && doneAnimating}
               delay={i * 150}
             >
               <Project key={p.id} {...p} />
@@ -238,7 +249,7 @@ class Projects extends React.Component {
               bottom
               collapse
               opposite
-              when={shownYear === 2018}
+              when={shownYear === 2018 && doneAnimating}
               delay={i * 150}
             >
               <Project key={p.id} {...p} />
