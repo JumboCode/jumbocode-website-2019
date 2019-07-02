@@ -5,6 +5,9 @@ import E4PLogo from '../../images/E4P-logo.png';
 import HSHSLogo from '../../images/HSHS-logo.png';
 import CORESLogo from '../../images/CORES-logo.png';
 import BISPOTLogo from '../../images/BISPOT-logo.png';
+import PuntoLogo from '../../images/Punto-logo.png';
+import PMDLogo from '../../images/PMD-logo.png';
+import BINJLogo from '../../images/BINJ-logo.png';
 
 // TODO: type this somehow. Use a generator, install flow, do something to make this type safe(r).
 const ProjectList = [
@@ -15,7 +18,7 @@ const ProjectList = [
     repositoryUrl: 'https://github.com/JumboCode/WCFB',
     projectUrl: 'http://wcfb-signin.herokuapp.com/',
     type: 'Desktop Application',
-    publishedDate: 2019,
+    years: [2019],
     logo: {
       image: {
         src: WCFBLogo,
@@ -29,7 +32,7 @@ const ProjectList = [
     repositoryUrl: 'https://github.com/JumboCode/E4P',
     projectUrl: 'https://ears4peers.herokuapp.com/',
     type: 'Website',
-    publishedDate: 2019,
+    years: [2019],
     logo: {
       image: {
         src: E4PLogo,
@@ -42,7 +45,7 @@ const ProjectList = [
       'Mobile application to facilitate inventory and resource management for street teams at homeless shelter',
     repositoryUrl: 'https://github.com/JumboCode/HSHS-2018-2019',
     type: 'Mobile Application',
-    publishedDate: '2018, 2019',
+    years: [2018, 2019],
     logo: {
       image: {
         src: HSHSLogo,
@@ -56,7 +59,7 @@ const ProjectList = [
     repositoryUrl: 'https://github.com/JumboCode/CORES',
     projectUrl: 'http://teachincores.com/',
     type: 'Website',
-    publishedDate: 2019,
+    years: [2019],
     logo: {
       image: {
         src: CORESLogo,
@@ -70,10 +73,51 @@ const ProjectList = [
     repositoryUrl: 'https://github.com/JumboCode/BRC',
     projectUrl: 'https://jumbocode-bi-spot.herokuapp.com',
     type: 'Website',
-    publishedDate: 2019,
+    years: [2019],
     logo: {
       image: {
         src: BISPOTLogo,
+      },
+    },
+  },
+  {
+    name: 'Punto Urban Art Museum',
+    description:
+      'Mobile applicaton for a guided tour  & gallery of murals throughout Salem Point',
+    repositoryUrl: 'https://github.com/JumboCode/NorthShoreCDC',
+    projectUrl:
+      'https://apps.apple.com/us/app/punto-urban-art-museum/id1320710363',
+    type: 'Mobile Application',
+    years: [2018],
+    logo: {
+      image: {
+        src: PuntoLogo,
+      },
+    },
+  },
+  {
+    name: 'People Making a Difference',
+    description:
+      'Mobile applicaton to facilitate the check-in, roles, and shift info for event volunteers',
+    repositoryUrl: 'https://github.com/JumboCode/PeopleMakingADifference',
+    type: 'Mobile Application',
+    years: [2018],
+    logo: {
+      image: {
+        src: PMDLogo,
+      },
+    },
+  },
+  {
+    name: 'Boston Institute for Nonprofit Journalism ',
+    description: 'Website for local, community based news aggregation',
+    repositoryUrl: 'https://github.com/JumboCode/BINJ',
+    projectUrl: 'https://binj-map.herokuapp.com/',
+    type: 'Website',
+    years: [2018],
+    logo: {
+      image: {
+        src: BINJLogo,
       },
     },
   },

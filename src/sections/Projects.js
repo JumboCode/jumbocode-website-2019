@@ -9,8 +9,15 @@ import { RepoLink, WebsiteLink } from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import Hide from '../components/Hide';
+import LinkAnimated from '../components/LinkAnimated';
 
 import ProjectList from '../data/projects';
+
+const ProjectsByYear = {
+  2019: ProjectList.filter(p => p.years.indexOf(2019) !== -1),
+  2018: ProjectList.filter(p => p.years.indexOf(2018) !== -1),
+  2017: ProjectList.filter(p => p.years.indexOf(2017) !== -1),
+};
 
 const Background = () => (
   <div>
@@ -103,7 +110,7 @@ const Project = ({
   projectUrl,
   repositoryUrl,
   type,
-  publishedDate,
+  years,
   logo,
 }) => (
   <Card p={0}>
@@ -148,7 +155,9 @@ const Project = ({
             {type}
           </ImageSubtitle>
           <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+            <ImageSubtitle bg="backgroundDark">
+              {years.join(', ')}
+            </ImageSubtitle>
           </Hide>
         </ProjectTag>
       </ImageContainer>
@@ -162,28 +171,94 @@ Project.propTypes = {
   projectUrl: PropTypes.string,
   repositoryUrl: PropTypes.string,
   type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
+  years: PropTypes.arrayOf(PropTypes.number).isRequired,
   logo: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
     }),
   }).isRequired,
 };
-const Projects = () => {
-  return (
-    <Section.Container id="projects" Background={Background}>
-      <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-        <Section.Header name="Projects" icon="💻" Box="notebook" />
-      </Flex>
-      <CardContainer minWidth="350px">
-        {ProjectList.map((p, i) => (
-          <Fade bottom delay={i * 200}>
-            <Project key={p.id} {...p} />
-          </Fade>
-        ))}
-      </CardContainer>
-    </Section.Container>
-  );
-};
+class Projects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shownYear: 2019,
+      doneAnimating: true,
+    };
+  }
+
+  render() {
+    const { shownYear, doneAnimating } = this.state;
+    return (
+      <Section.Container id="projects" Background={Background}>
+        <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+          <Section.Header name="Projects" icon="💻" Box="notebook" />
+        </Flex>
+        <Flex
+          width="350px"
+          alignSelf="center"
+          alignItems="center"
+          justifyContent="space-around"
+        >
+          {[2019, 2018].map(year => {
+            return (
+              <Text as="h4" color="secondaryDark" mb={4}>
+                <LinkAnimated
+                  selected={shownYear === year}
+                  onClick={() => {
+                    // Don't animate if nothing to change.
+                    if (year === shownYear) return;
+                    this.setState(
+                      {
+                        shownYear: year,
+                        doneAnimating: false,
+                      },
+                      () => {
+                        setTimeout(() => {
+                          this.setState({
+                            doneAnimating: true,
+                          });
+                        }, 1000);
+                      },
+                    );
+                  }}
+                >
+                  {year}
+                </LinkAnimated>
+              </Text>
+            );
+          })}
+        </Flex>
+
+        <CardContainer minWidth="350px">
+          {ProjectsByYear[2019].map((p, i) => (
+            <Fade
+              bottom
+              collapse
+              opposite
+              when={shownYear === 2019 && doneAnimating}
+              delay={i * 150}
+            >
+              <Project key={p.id} {...p} />
+            </Fade>
+          ))}
+        </CardContainer>
+        <CardContainer minWidth="350px">
+          {ProjectsByYear[2018].map((p, i) => (
+            <Fade
+              bottom
+              collapse
+              opposite
+              when={shownYear === 2018 && doneAnimating}
+              delay={i * 150}
+            >
+              <Project key={p.id} {...p} />
+            </Fade>
+          ))}
+        </CardContainer>
+      </Section.Container>
+    );
+  }
+}
 
 export default Projects;
