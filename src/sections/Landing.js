@@ -67,7 +67,9 @@ const LandingPage = () => {
               </Text>
             </Fade>
             <Fade delay={500}>
-              <Text color="primary">Code</Text>
+              <Text color="primary" style={{ marginTop: '2vw' }}>
+                Code
+              </Text>
             </Fade>
           </Flex>
         </Heading>
