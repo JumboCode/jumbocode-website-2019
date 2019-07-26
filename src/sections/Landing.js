@@ -62,14 +62,10 @@ const LandingPage = () => {
         >
           <Flex>
             <Fade>
-              <Text fontWeight="900" color="secondary">
-                Jumbo
-              </Text>
+              <Text color="secondary">Jumbo</Text>
             </Fade>
             <Fade delay={500}>
-              <Text color="primary" style={{ marginTop: '2vw' }}>
-                Code
-              </Text>
+              <Text color="primary">Code</Text>
             </Fade>
           </Flex>
         </Heading>
