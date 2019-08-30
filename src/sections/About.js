@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 
 // TODO: Correctly install webpack to use raw-loader for markdown files
 // eslint-disable-next-line import/no-webpack-loader-syntax,  import/no-unresolved
-import AboutContentPath from 'raw-loader!../data/about.md';
+import AboutContentPath from '../data/about.md';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
 import markdownRenderer from '../components/MarkdownRenderer';
