@@ -47,7 +47,7 @@ const LandingPage = () => {
     'Empowering Students',
     'Supporting Non-Profits',
     'Volunteering Locally',
-    'Impacting Globaly',
+    'Impacting Globally',
     'Building Custom Technology',
   ];
   return (
