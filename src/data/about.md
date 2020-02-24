@@ -4,12 +4,12 @@ JumboCode is an organization dedicated to helping non-profits by providing them 
 
 There are two main goals that encompass our work:
 
-1. To support local communities in social and civic endeavorments
+1. To support local communities in social and civic endeavors
 2. To empower students with the technological skills to be impactful
 
 ### Our Process
 
-JumboCode projects run throughout the academic school year. In the summer, we work with non-profit organizations to gauge their needs, and brainstorm potential technological solutions. Well-fitting projects are assigned a project lead, who then begins working more closely with their client to plan out the project. Near the end of the summer, project leads begin developing architecture bases for their code bases.
+JumboCode projects run throughout the academic school year. In the summer, we work with non-profit organizations to gauge their needs, and brainstorm potential technological solutions. Projects are assigned a project lead, who then begins working more closely with their client to plan out the project. Near the end of the summer, project leads begin developing architecture bases for their code bases.
 
 Teams of around 10 students from a variety of development, design, and management backgrounds are formed in September. These teams work with their client non-profits to develop, deploy, test, and iterate on their projects over the next 9 months.
 
