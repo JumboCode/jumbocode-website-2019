@@ -4,7 +4,7 @@ JumboCode is an organization dedicated to helping non-profits by providing with 
 
 There are two main goals that encompass our work:
 
-1. To support local communities in social and civic endeavorments
+1. To support local communities in social and civic endeavors
 2. To empower students with the technological skills to be impactful
 
 ### Our Process
