@@ -9,7 +9,7 @@ There are two main goals that encompass our work:
 
 ### Our Process
 
-JumboCode projects run throughout the academic school year. In the summer, we work with non-profit organizations to gauge their needs and brainstorm potential technological solutions. Near the end of the summer, selected projects are assigned a project lead, who then begins working more closely with the nonprofit the project is for to plan out the project. Shortly after that, project leads begin developing architecture bases for their code bases.
+JumboCode projects run throughout the academic school year. In the summer, we work with non-profit organizations to gauge their needs and brainstorm potential technological solutions. Near the end of the summer, selected projects are assigned a project lead, who then begins working more closely with the respective non-profit to plan out the project. Shortly after that, project leads begin developing architecture bases for their code bases.
 
 Teams of around 10 students from a variety of development, design, and management backgrounds are formed in September. These teams work with their respective non-profits to develop, deploy, test, and iterate on their projects over the next 9 months.
 
