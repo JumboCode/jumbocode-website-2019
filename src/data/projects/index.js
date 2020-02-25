@@ -14,7 +14,7 @@ const ProjectList = [
   {
     name: 'WCFB',
     description:
-      'Volunteer sign-in application for the Wooster County Food Bank',
+      'Volunteer sign-in application for the Worcester County Food Bank',
     repositoryUrl: 'https://github.com/JumboCode/WCFB',
     projectUrl: 'http://wcfb-signin.herokuapp.com/',
     type: 'Desktop Application',
@@ -42,7 +42,7 @@ const ProjectList = [
   {
     name: 'Harvard Square Homeless Shelter',
     description:
-      'Mobile application to facilitate inventory and resource management for street teams at homeless shelter',
+      'Mobile application to facilitate inventory and resource management for street teams at the homeless shelter',
     repositoryUrl: 'https://github.com/JumboCode/HSHS-2018-2019',
     type: 'Mobile Application',
     years: [2018, 2019],
@@ -55,7 +55,7 @@ const ProjectList = [
   {
     name: 'Teach in Cores',
     description:
-      'Multilingual website for English classes through the Comittee on Refugees from El Salvador in Somerville',
+      'Multilingual website for English classes run by the Comittee on Refugees from El Salvador in Somerville',
     repositoryUrl: 'https://github.com/JumboCode/CORES',
     projectUrl: 'http://teachincores.com/',
     type: 'Website',
