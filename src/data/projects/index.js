@@ -57,7 +57,6 @@ const ProjectList = [
     description:
       'Multilingual website for English classes through the Comittee on Refugees from El Salvador in Somerville',
     repositoryUrl: 'https://github.com/JumboCode/CORES',
-    projectUrl: 'http://teachincores.com/',
     type: 'Website',
     years: [2019],
     logo: {
